@@ -1,52 +1,57 @@
 # MoneyPopup
-![Supported server version](https://img.shields.io/badge/minecraft-1.21.1+-brightgreen)
 
-Plugin hiển thị popup tiền bay lên phía trên đầu người chơi mỗi khi số dư thay đổi.  
-Hỗ trợ cả tiền kinh tế qua Vault và điểm từ PlayerPoints, phù hợp cho server survival, minigame, farm, shop hoặc các plugin thưởng tiền theo sự kiện.
+MoneyPopup là plugin Paper dùng để hiện popup tiền bay lên trên đầu người chơi khi số dư thay đổi.
 
-## Tính năng
+Plugin này hỗ trợ 2 nguồn chính:
+- tiền economy qua Vault
+- điểm từ PlayerPoints
 
-- Hiển thị popup khi người chơi nhận hoặc mất tiền từ hệ thống kinh tế
-- Hỗ trợ PlayerPoints như một nguồn giá trị riêng
-- Gộp nhiều giao dịch liên tiếp thành một popup để tránh spam
-- Tùy chỉnh định dạng hiển thị, màu sắc, đơn vị tiền tệ và ngưỡng tối thiểu
-- Tự xóa ArmorStand còn sót khi plugin khởi động lại
-- Hỗ trợ reload cấu hình bằng lệnh trong game
+Nó phù hợp với các server survival, farm, shop hoặc minigame, nơi người chơi nhận tiền liên tục và cần một hiệu ứng nhìn trực quan hơn chat message thông thường.
 
-## Hướng dẫn sử dụng
+## Plugin làm được gì?
 
-**Cần có:**
+- Hiện popup khi người chơi nhận tiền
+- Có thể bật thêm popup khi người chơi bị trừ tiền
+- Hỗ trợ PlayerPoints riêng, không gộp chung với Vault
+- Gộp nhiều giao dịch gần nhau thành một popup để đỡ spam màn hình
+- Tùy chỉnh màu, format hiển thị, đơn vị và mức tối thiểu để hiện popup
+- Tự dọn ArmorStand còn sót nếu server restart không sạch
 
-- [Paper](https://papermc.io/) 1.21.1 trở lên
+## Cần những gì?
+
+- Java 21
+- Paper 1.21.1 trở lên
 - [Vault](https://www.spigotmc.org/resources/vault.34315/)
-- Một plugin economy tương thích Vault, ví dụ EssentialsX
-- (Tùy chọn) [PlayerPoints](https://www.spigotmc.org/resources/playerpoints.80745/)
+- một plugin economy dùng với Vault, ví dụ EssentialsX
+- (tùy chọn) [PlayerPoints](https://www.spigotmc.org/resources/playerpoints.80745/)
 
-**Cài đặt:**
+## Cài nhanh
 
-1. Build plugin bằng `mvn clean package`
-2. Chép file jar trong thư mục `target/` vào `plugins/`
-3. Khởi động server để plugin tạo `config.yml`
-4. Chỉnh cấu hình theo nhu cầu
-5. Dùng `/moneypopup reload` để tải lại cấu hình
+1. Chạy `mvn clean package`
+2. Lấy file jar trong thư mục `target/`
+3. Bỏ vào thư mục `plugins/` của server
+4. Khởi động server một lần để plugin tạo file config
+5. Chỉnh `config.yml` theo ý bạn
+6. Dùng `/moneypopup reload` để tải lại cấu hình
 
-## Danh sách lệnh
+## Lệnh
 
-| Lệnh | Chức năng | Quyền |
+| Lệnh | Công dụng | Quyền |
 |---|---|---|
-| `/moneypopup reload` | Tải lại cấu hình plugin | `moneypopup.admin` |
+| `/moneypopup reload` | Reload config | `moneypopup.admin` |
 
-> Alias: `/mpopup` và `/mp`
+Alias có sẵn: `/mpopup`, `/mp`
 
-## Cấu hình
+## Cấu hình nhanh
 
-Plugin sử dụng một file `config.yml` với ba nhóm chính:
+Plugin dùng 1 file cấu hình là `config.yml`.
 
-- `vault`: cấu hình popup cho hệ kinh tế qua Vault
-- `playerpoints`: cấu hình popup cho PlayerPoints
-- `display`: cấu hình thời gian hiển thị, độ cao bay và thời gian gộp popup
+Ba phần chính trong file này:
+- `vault`: cấu hình popup cho tiền economy
+- `playerpoints`: cấu hình popup cho điểm PlayerPoints
+- `display`: thời gian hiển thị, độ cao bay và thời gian gộp popup
 
-Ví dụ cấu hình:
+Ví dụ:
 
 ```yaml
 vault:
@@ -74,14 +79,13 @@ display:
   merge_window_ticks: 10
 ```
 
-**Placeholder hỗ trợ:**
-
-- `%amount%`: giá trị thay đổi
+Placeholder hỗ trợ:
+- `%amount%`: số tiền hoặc số điểm thay đổi
 - `%currency%`: tên đơn vị hiển thị
 
-## Ghi chú
+## Một vài lưu ý
 
-- `show_expense: false` sẽ ẩn popup khi người chơi bị trừ tiền
-- `min_amount` giúp bỏ qua các giao dịch quá nhỏ
-- `merge_window_ticks` càng lớn thì popup càng dễ được gộp lại
-- Đặt `merge_window_ticks: 0` nếu muốn mỗi giao dịch hiển thị riêng
+- Nếu chỉ muốn hiện khi người chơi nhận tiền, để `show_expense: false`
+- Nếu server có nhiều nguồn thưởng nhỏ liên tục, nên giữ `merge_window_ticks` lớn hơn 0 để tránh spam
+- Nếu muốn mỗi giao dịch hiện riêng, đặt `merge_window_ticks: 0`
+- `min_amount` giúp bỏ qua các thay đổi quá nhỏ
