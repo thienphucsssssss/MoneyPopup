@@ -1,7 +1,7 @@
-# MoneyPopup config
-# Placeholders:
-# %amount% = gia tri thay doi
-# %currency% = ten don vi
+# Cấu hình MoneyPopup
+# Placeholder:
+# %amount% = giá trị thay đổi
+# %currency% = tên đơn vị
 
 vault:
   enabled: true

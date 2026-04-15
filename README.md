@@ -1,21 +1,21 @@
 # MoneyPopup
 
-Plugin Paper hien popup tien bay len khi so du thay doi.
+Plugin Paper hiển thị popup tiền bay lên khi số dư thay đổi.
 
-## Yeu cau
+## Yêu cầu
 
 - Java 21
-- Paper 1.21.1+
+- Paper 1.21.1 trở lên
 - Vault
 - EssentialsX
-- PlayerPoints la tuy chon
+- PlayerPoints là tùy chọn
 
-## Tinh nang
+## Tính năng
 
-- Hien popup cho Vault va PlayerPoints
-- Gop nhieu thay doi lien tiep thanh mot popup
-- Lenh `/moneypopup reload`
-- Xoa armor stand con sot khi plugin bat lai
+- Hiển thị popup cho Vault và PlayerPoints
+- Gộp nhiều thay đổi liên tiếp thành một popup
+- Lệnh `/moneypopup reload`
+- Xóa armor stand còn sót khi plugin bật lại
 
 ## Build
 
@@ -23,13 +23,13 @@ Plugin Paper hien popup tien bay len khi so du thay doi.
 mvn clean package
 ```
 
-Jar sau khi build nam trong `target/`.
+File jar sau khi build nằm trong `target/`.
 
-## Cau hinh
+## Cấu hình
 
-Sua file `src/main/resources/config.yml`.
+Chỉnh trong `src/main/resources/config.yml`.
 
-Placeholder ho tro:
+Placeholder hỗ trợ:
 
 - `%amount%`
 - `%currency%`
