@@ -1,0 +1,28 @@
+# MoneyPopup config
+# Placeholders:
+# %amount% = gia tri thay doi
+# %currency% = ten don vi
+
+vault:
+  enabled: true
+  currency_name: "$"
+  show_income: true
+  show_expense: false
+  income_format: "&a+%currency%%amount%"
+  expense_format: "&c-%currency%%amount%"
+  min_amount: 1
+
+playerpoints:
+  enabled: true
+  currency_name: "Points"
+  show_income: true
+  show_expense: false
+  income_format: "&6+%amount% %currency%"
+  expense_format: "&c-%amount% %currency%"
+  min_amount: 1
+
+display:
+  duration_ticks: 40
+  float_height: 1.5
+  offset_y: 2.0
+  merge_window_ticks: 10

@@ -1,0 +1,21 @@
+name: MoneyPopup
+version: 1.0.0
+main: com.starg.moneypopup.MoneyPopup
+api-version: '1.21'
+description: Hien thi bong bong tien bay len khi nhan hoac mat tien
+author: StarG
+depend:
+  - Vault
+  - Essentials
+softdepend:
+  - PlayerPoints
+commands:
+  moneypopup:
+    description: Quan ly plugin MoneyPopup
+    usage: /moneypopup reload
+    aliases: [mpopup, mp]
+    permission: moneypopup.admin
+permissions:
+  moneypopup.admin:
+    description: Quyen reload plugin
+    default: op

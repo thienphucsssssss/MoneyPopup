@@ -1,0 +1,6 @@
+target/
+libs/
+.idea/
+.vscode/
+*.iml
+SPEC.md
