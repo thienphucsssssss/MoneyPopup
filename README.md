@@ -1,3 +1,4 @@
+<img width="1536" height="579" alt="moneypopup_logo" src="https://github.com/user-attachments/assets/7837f4da-7e26-4c0c-b1ca-6fa4f623bb29" />
 # MoneyPopup
 
 MoneyPopup là plugin Paper dùng để hiện popup tiền bay lên trên đầu người chơi khi số dư thay đổi.
